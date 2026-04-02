@@ -1,1 +1,297 @@
-test
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jim Lin | SRE & Cloud Architect</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-hover: #79c0ff;
+            --green: #3fb950;
+            --orange: #d29922;
+            --purple: #bc8cff;
+            --tag-bg: #1f2937;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        header { text-align: center; padding: 3rem 0 2rem; }
+        header h1 { font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem; }
+        header p { color: var(--text-muted); font-size: 1.05rem; }
+        .subtitle { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem; }
+        .links { margin-top: 1rem; }
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 0.75rem;
+            font-size: 0.95rem;
+        }
+        .links a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+        .section { margin-top: 2.5rem; }
+        .section h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: border-color 0.2s;
+        }
+        .card:hover { border-color: var(--accent); }
+        .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .card h3 a { color: var(--accent); text-decoration: none; }
+        .card h3 a:hover { text-decoration: underline; }
+        .card h3 .badge {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            font-weight: 400;
+            margin-left: 0.4rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.1rem 0.45rem;
+            vertical-align: middle;
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            min-height: 2.6em;
+        }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .tag {
+            background: var(--tag-bg);
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .tag.lang { color: var(--green); border-color: #23432e; }
+        .tag.infra { color: var(--orange); border-color: #3d2e00; }
+        .tag.tool { color: var(--purple); border-color: #2d2247; }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 3rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <h1>Jim Lin</h1>
+        <p>SRE &amp; Cloud Architect</p>
+        <p class="subtitle">Multi-Cloud &bull; Observability &bull; DNS &bull; CDN Automation</p>
+        <div class="links">
+            <a href="https://github.com/tsrejim">GitHub</a>
+            <a href="https://github.com/TsreJJ">TsreJJ Org</a>
+        </div>
+    </header>
+
+    <div class="section">
+        <h2>SRE / Observability</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>ora-watcher <span class="badge">private</span></h3>
+                <p>High-availability domain monitoring &mdash; Consul service discovery, Blackbox/WSS multi-cloud probing, VictoriaMetrics storage &amp; tiered alerting</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag infra">Consul</span>
+                    <span class="tag infra">VictoriaMetrics</span>
+                    <span class="tag infra">Grafana</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>ora-sentinel <span class="badge">private</span></h3>
+                <p>Domain health sentinel &mdash; continuous availability &amp; certificate monitoring with automatic alerting</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag infra">Prometheus</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>tgbot_SREInspectorBot <span class="badge">private</span></h3>
+                <p>SRE domain quality inspection Telegram Bot &mdash; one-click health check &amp; report</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag tool">Telegram Bot</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>claude-dashboard <span class="badge">private</span></h3>
+                <p>TUI dashboard for monitoring Claude Code sessions in tmux</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag tool">TUI</span>
+                    <span class="tag tool">tmux</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Cloud &amp; Infrastructure</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>zero-nms <span class="badge">private</span></h3>
+                <p>Multi-cloud management system &mdash; unified AWS, Alibaba Cloud &amp; Cloudflare resource management</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag infra">AWS</span>
+                    <span class="tag infra">Aliyun</span>
+                    <span class="tag infra">Cloudflare</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>cloud_billing <span class="badge">private</span></h3>
+                <p>Multi-cloud billing consolidation &mdash; cost aggregation, analysis &amp; visualization</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag infra">AWS</span>
+                    <span class="tag infra">Aliyun</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>rpt-koda <span class="badge">private</span></h3>
+                <p>CDN domain automation &mdash; detect, decide, replace, verify &amp; notify in a closed loop</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag infra">CDN</span>
+                    <span class="tag tool">Automation</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>openclaw-control-center <span class="badge">private</span></h3>
+                <p>Ops control center &mdash; centralized multi-platform infrastructure management</p>
+                <div class="tags">
+                    <span class="tag lang">TypeScript</span>
+                    <span class="tag tool">Web UI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>DNS Management</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://github.com/TsreJJ/unified-dns-manager">unified-dns-manager</a></h3>
+                <p>Unified multi-platform DNS system &mdash; Aliyun / Cloudflare / Route53 / CDNetworks with automatic NS detection</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag infra">Route53</span>
+                    <span class="tag infra">Cloudflare</span>
+                    <span class="tag infra">Aliyun DNS</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>dns-manager <span class="badge">private</span></h3>
+                <p>Multi-cloud DNS management &mdash; frontend-backend separation with RESTful API &amp; modern Web UI</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag tool">REST API</span>
+                    <span class="tag tool">Web UI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Network &amp; Security</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://github.com/tsrejim/sing-box">sing-box</a></h3>
+                <p>Sing-box all-in-one &mdash; one-click multi-protocol deployment script</p>
+                <div class="tags">
+                    <span class="tag lang">Shell</span>
+                    <span class="tag tool">sing-box</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>nyx-vpn <span class="badge">private</span></h3>
+                <p>Shadowsocks 2022 proxy deployment &mdash; sing-box + OpenResty + Let's Encrypt + Cloudflare DNS</p>
+                <div class="tags">
+                    <span class="tag lang">Shell</span>
+                    <span class="tag infra">OpenResty</span>
+                    <span class="tag infra">Cloudflare</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><a href="https://github.com/tsrejim/ZeroOTP">ZeroOTP</a></h3>
+                <p>Browser-based 2FA authenticator &mdash; TOTP code generator running entirely in browser</p>
+                <div class="tags">
+                    <span class="tag lang">TypeScript</span>
+                    <span class="tag tool">2FA</span>
+                    <span class="tag tool">TOTP</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Tools &amp; Utilities</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://github.com/tsrejim/ICP_Query">ICP_Query</a></h3>
+                <p>ICP filing query &mdash; domain, app, mini-program &amp; enterprise ICP lookup via local API</p>
+                <div class="tags">
+                    <span class="tag tool">API</span>
+                    <span class="tag tool">ICP</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Aily_tglog <span class="badge">private</span></h3>
+                <p>Telegram log collector &mdash; structured storage for TG group messages</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag tool">Telegram</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>streamlit-app <span class="badge">private</span></h3>
+                <p>Multi-app Streamlit deployment platform</p>
+                <div class="tags">
+                    <span class="tag lang">Python</span>
+                    <span class="tag tool">Streamlit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Jim Lin
+    </footer>
+
+</div>
+</body>
+</html>
